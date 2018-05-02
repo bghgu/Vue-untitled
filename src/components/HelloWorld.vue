@@ -2,6 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <router-link to="/login">Login Page</router-link>
+    <router-link to="/get">Get Test Page</router-link>
+    <router-link to="/post">Post Test Page</router-link>
   </div>
 </template>
 
