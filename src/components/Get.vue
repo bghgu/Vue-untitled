@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link to="/">Main Page</router-link>
     <h1>{{msg}}</h1>
     <div v-if="hasResult">
       <div class="box" v-for="post in posts" v-bind:key="post.voteId">
@@ -10,8 +11,8 @@
         <p>투표한 사람수 : {{post.allVoter}}%</p>
       </div>
     </div>
-    <button v-on:click="searchTerm">글 불러오기</button>
     <h1>{{status}}</h1>
+    <button type="button" class="btn btn-primary" v-on:click="searchTerm">투표 정보 조회</button>
   </div>
 </template>
 
@@ -33,13 +34,13 @@ export default {
   },
   methods: {
     searchTerm: function () {
-      const baseURI = 'http://bghgu.tk:3000'
-      this.$http.get(`${baseURI}/info/vote`)
+      const baseURI = 'http://127.0.0.1:8080'
+      this.$http.get(`${baseURI}/auth`)
         .then((result) => {
+          console.log(result.data)
           this.posts = result.data.data
           this.msg = result.data.msg
           this.status = result.data.status
-          console.log(this.posts)
         })
     }
   }
@@ -47,15 +48,8 @@ export default {
 </script>
 
 <style scoped>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-    max-width: 560px;
-  }
-
   .box {
     border: solid blue 1px;
+    margin: 60px;
   }
 </style>
