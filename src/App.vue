@@ -1,6 +1,8 @@
 <template>
   <div id="app">
 
+    <Nav></Nav>
+    <Post class="post"></Post>
     <div class="box1">
       <img src="./assets/logo.png">
       <h1>untitled project</h1>
@@ -16,8 +18,11 @@
 </template>
 
 <script>
+import Nav from './components/Nav'
+import Post from './components/Post'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {Post, Nav}
 }
 </script>
 
@@ -28,7 +33,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin: 60px;
+  border: solid violet 1px;
+}
+.nav {
+  border: solid salmon 1px;
+}
+.post {
+  margin-left: 25%;
 }
 .box1 {
   border: solid blue 1px;

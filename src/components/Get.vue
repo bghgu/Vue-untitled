@@ -34,8 +34,8 @@ export default {
   },
   methods: {
     searchTerm: function () {
-      const baseURI = 'http://127.0.0.1:8080'
-      this.$http.get(`${baseURI}/auth`)
+      const baseURI = 'http://bghgu.tk:3000'
+      this.$http.get(`${baseURI}/info/vote`)
         .then((result) => {
           console.log(result.data)
           this.posts = result.data.data

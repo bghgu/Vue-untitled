@@ -13,6 +13,7 @@
         </div>
         <button type="submit" class="btn btn-default" v-on:click="inputHandler">제출</button>
       </form>
+
       <div v-if="hasResult">
         <h1>{{status}}</h1>
         <h1>{{data}}</h1>
